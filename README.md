@@ -62,7 +62,7 @@ The sending server’s IP address, 194.25.134.80, is located in Australia, confi
     - I used dig -x to perform a reverse lookup on the IP address from the email header. The analysis confirmed that the email did not originate from Google but instead passed through multiple unrelated servers:
         1. **Originating Server (Australia)**: The email was initially sent from an Australian ISP (60-241-138-146.static.tpgi.com.au), which is part of TPG Internet.
         2. **Intermediate Server (Germany)**: It was then routed through a German server (mailout01.t-online.de) belonging to T-Online.
-    This clearly demonstrates that the email was not sent from Google’s infrastructure, despite the spoofed address claiming to be from a Gmail domain.
+    - This clearly demonstrates that the email was not sent from Google’s infrastructure, despite the spoofed address claiming to be from a Gmail domain.
 
 
 
