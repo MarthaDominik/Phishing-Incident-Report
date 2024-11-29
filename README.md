@@ -65,6 +65,7 @@ The sending server’s IP address, 194.25.134.80, is located in Australia, confi
     This clearly demonstrates that the email was not sent from Google’s infrastructure, despite the spoofed address claiming to be from a Gmail domain.
 
 
+
    <img width="588" alt="Reverse DNS Lookup Screenshot" src="https://github.com/user-attachments/assets/7912d137-6340-4a3b-a69d-d4a1c3d5e2c9">
 
 
