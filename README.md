@@ -84,7 +84,7 @@ The sending server’s IP address, 194.25.134.80, is located in Australia, confi
             Delivered to the recipient’s mailbox at 10.140.178.13.
 
 
-   <img width="574" alt="Email Hop Analysis Screenshot" src="https://github.com/user-attachments/assets/3bef28cb-a07f-4510-a6af-f8f4e1aef29f">
+ <img width="574" alt="Email Hop Analysis Screenshot" src="https://github.com/user-attachments/assets/3bef28cb-a07f-4510-a6af-f8f4e1aef29f">
 
 
 5. **DMARC Record Check**:
