@@ -59,19 +59,28 @@ The sending server’s IP address, 194.25.134.80, is located in Australia, confi
 ## Visual Evidence
 
 1. **Reverse DNS Lookup**:
-    - I used dig -x to reverse-lookup the IP address, confirming the email originated from an ISP in Australia, not from Google. Shows that the IP resolves to mailout01[.]t-online[.]de, confirming the email didn't originate from Google's servers.
+    - I used dig -x to perform a reverse lookup on the IP address from the email header. The analysis confirmed that the email did not originate from Google but instead passed through multiple unrelated servers:
+        1. **Originating Server (Australia)**: The email was initially sent from an Australian ISP (60-241-138-146.static.tpgi.com.au), which is part of TPG Internet.
+        2. **Intermediate Server (Germany)**: It was then routed through a German server (mailout01.t-online.de) belonging to T-Online.
+    This clearly demonstrates that the email was not sent from Google’s infrastructure, despite the spoofed address claiming to be from a Gmail domain.
     
    <img width="588" alt="Reverse DNS Lookup Screenshot" src="https://github.com/user-attachments/assets/7912d137-6340-4a3b-a69d-d4a1c3d5e2c9">
 
 
 3. **Email Hop Analysis**:
-    - I analyzed the email’s journey using Phishtool, tracking its path from the sender’s IP (Australian ISP) to the recipient’s inbox. The visual image clearly demonstrates the email hop sequence and irregularities.
+    - Using Phishtool, I analyzed the email’s journey, tracking its path through the following hops:
     
     - **Hop sequence**:
-        1. From 60-241-138-146[.]static[.]tpgi[.]com[.]au to mail11.tpgi.com.au
-        2. From mail11[.]tpgi[.]com[.]au to mx[.]google[.]com
-        3. Received by 10.151.44.15
-        4. Final hop to 10.140.178.13
+        1. **Hop 1**:
+            Received from 60-241-138-146.static.tpgi.com.au (Australia, TPG Internet).
+            This is the originating server used by the attacker.
+        2. **Hop 2**:
+            Received from mailout01.t-online.de (Germany, T-Online).
+            The email was relayed through this server, likely as part of an attempt to obscure its true origin.
+        3. **Hop 3**:
+            Received by mx.google.com – the mail server used by the recipient.
+        4. **Hop 4**:
+            Delivered to the recipient’s mailbox at 10.140.178.13.
 
    <img width="574" alt="Email Hop Analysis Screenshot" src="https://github.com/user-attachments/assets/3bef28cb-a07f-4510-a6af-f8f4e1aef29f">
 
