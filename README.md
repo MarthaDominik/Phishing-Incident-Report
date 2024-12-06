@@ -44,7 +44,8 @@ The sending server’s IP address, 194.25.134.80, is located in Australia, confi
     - **dig** and **whois**: Performed DNS lookups to verify the IP address and examine the DMARC, SPF, and DKIM status for email authentication.
 
 2. **Key Results**:
-    - **Email Origin**: The email did not originate from Google’s infrastructure. Instead, the first hop (60-241-138-146.static.tpgi.com.au, IP: 194.25.134.80) indicates it was sent via TPG Internet, an Australian ISP. This is confirmed by the ‘Received From’ field in the email header, which identifies mail11.tpgi.com.au. The spoofed sender address (g[.]corp[.]sender@gmail[.]com) was used to impersonate Google.    - **Redirected URL**: The suspicious URL (hxxp[://]006[.]zzz[.]com[.]ua/) was flagged as dangerous. It likely leads to a phishing site.
+    - **Email Origin**: The email did not originate from Google’s infrastructure. Instead, the first hop (60-241-138-146.static.tpgi.com.au, IP: 194.25.134.80) indicates it was sent via TPG Internet, an Australian ISP. This is confirmed by the ‘Received From’ field in the email header, which identifies mail11.tpgi.com.au. The spoofed sender address (g[.]corp[.]sender@gmail[.]com) was used to impersonate Google.
+    - **Redirected URL**: The suspicious URL (hxxp[://]006[.]zzz[.]com[.]ua/) was flagged as dangerous. It likely leads to a phishing site.
     - **Attachment Analysis**: Despite being an empty .docx file, the attachment is suspicious and could be part of a broader phishing tactic, like bypassing filters or encouraging the user to engage with the malicious content.
 
 3. **Authentication Failures**:
